@@ -2,14 +2,70 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.b1 {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://upload.wikimedia.org/wikipedia/commons/3/38/Speedcubing%2C_BLD_solving_in_Estonian_Open_2016.jpg')
+      no-repeat 50% 50%;
+  top: 0;
+  opacity: 0.9;
+  display: table;
+  background-size: cover;
+}
+.b1 .in1 {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+.content {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+.content h1 {
+  font-family: 'Century Gothic', sans-serif;
+  color: #f9f3f4;
+  font-size: 500%;
+  text-shadow: 0 0 300px #000;
+}
+.content .btn {
+  border-radius: 9px;
+  color: #f9f3f4;
+  text-decoration: none;
+  font-family: 'Century Gothic', sans-serif;
+  border: 3px solid;
+  padding: 7px 13px;
+  font-weight: bold;
+}
+.content .btn:hover {
+  color: #2196f3;
+}
+p {
+  font-size: 160%;
+  line-height: 200%;
+  text-align: justify;
+  margin: 3%;
+  font-family: sans-serif;
 }

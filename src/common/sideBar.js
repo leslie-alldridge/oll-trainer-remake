@@ -21,7 +21,6 @@ class SideBar extends Component {
   };
 
   navigate = (keys) => {
-    console.log(keys)
     this.setState({
       keys
     })
@@ -48,11 +47,12 @@ class SideBar extends Component {
               <Icon type='solution' />
               <span>Learning</span>
             </Menu.Item>
-            <Menu.Item key='2'>
+            <Menu.Item onClick={() => {push('/timer'); this.navigate('2')}} key='2'>
               <Icon type='hourglass' />
-              <span>Timed</span>
+              <span>Timer</span>
             </Menu.Item>
             <SubMenu
+            
               key='sub1'
               title={
                 <span>
@@ -61,15 +61,15 @@ class SideBar extends Component {
                 </span>
               }
             >
-              <Menu.Item key='3'>All-Edges</Menu.Item>
-              <Menu.Item key='4'>T-Shapes</Menu.Item>
-              <Menu.Item key='5'>Squares</Menu.Item>
+              <Menu.Item onClick={() => {push('/algs'); this.navigate('3')}} key='3'>All</Menu.Item>
+              <Menu.Item onClick={() => {push('/algs/all-edges'); this.navigate('4')}} key='4'>All-Edges</Menu.Item>
+              <Menu.Item onClick={() => {push('/algs/t-shapes'); this.navigate('5')}} key='5'>T-Shapes</Menu.Item>
+              <Menu.Item onClick={() => {push('/algs/squares'); this.navigate('6')}} key='6'>Squares</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
-        {console.log(this.props.props.match)}
         {pathname === '/' && (
-          <Home />
+          <Home navigate={() => this.navigate('1')}/>
         )}
         {pathname === '/learning' && (
           <Learning />

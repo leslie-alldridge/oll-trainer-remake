@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
+import Home from './home';
+import Learning from './learning';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 class SideBar extends Component {
-  state = {
-    collapsed: false,
-    page: 'home'
-  };
+  constructor(props){
+    super(props)
+    this.state = {
+      collapsed: false,
+      keys: '0'
+    };
+  }
+  
 
   onCollapse = collapsed => {
     this.setState({ collapsed });
   };
 
-  navigateTo = route => {
+  navigate = (keys) => {
+    console.log(keys)
     this.setState({
-      page: route
-    });
-  };
+      keys
+    })
+  }
 
   render() {
+    console.log(this.state)
+    const { pathname } = this.props.props.location
+    const { push } = this.props.props.history
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider
@@ -29,68 +39,40 @@ class SideBar extends Component {
           onCollapse={this.onCollapse}
         >
           <div className='logo' />
-          <Menu theme='dark' defaultSelectedKeys={['0']} mode='inline'>
-            <Menu.Item key='0'>
-              <Icon type='pie-chart' />
+          <Menu theme='dark' selectedKeys={[this.state.keys]} defaultSelectedKeys={['0']} mode='inline'>
+            <Menu.Item onClick={() => {push('/'); this.navigate('0')}} key='0'>
+              <Icon type='home' />
               <span>Home</span>
             </Menu.Item>
-            <Menu.Item key='1'>
-              <Icon type='pie-chart' />
+            <Menu.Item onClick={() => {push('/learning'); this.navigate('1')}} key='1'>
+              <Icon type='solution' />
               <span>Learning</span>
             </Menu.Item>
             <Menu.Item key='2'>
-              <Icon type='desktop' />
+              <Icon type='hourglass' />
               <span>Timed</span>
             </Menu.Item>
             <SubMenu
               key='sub1'
               title={
                 <span>
-                  <Icon type='user' />
+                  <Icon type='book' />
                   <span>OLL Algs</span>
                 </span>
               }
             >
-              <Menu.Item key='3'>Tom</Menu.Item>
-              <Menu.Item key='4'>Bill</Menu.Item>
-              <Menu.Item key='5'>Alex</Menu.Item>
+              <Menu.Item key='3'>All-Edges</Menu.Item>
+              <Menu.Item key='4'>T-Shapes</Menu.Item>
+              <Menu.Item key='5'>Squares</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
-        {this.state.page === 'home' && (
-          <Layout>
-            <section className='b1'>
-              <div className='in1'>
-                <div className='content'>
-                  <h1>OLL Trainer</h1>
-                  <a
-                    className='btn'
-                    onClick={() => this.navigateTo('learning')}
-                  >
-                    GET STARTED
-                  </a>
-                </div>
-              </div>
-            </section>
-          </Layout>
+        {console.log(this.props.props.match)}
+        {pathname === '/' && (
+          <Home />
         )}
-        {this.state.page === 'learning' && (
-          <Layout>
-            <Header style={{ background: '#fff', padding: 0 }} />
-            <Content style={{ margin: '0 16px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>User</Breadcrumb.Item>
-                <Breadcrumb.Item>Bill</Breadcrumb.Item>
-              </Breadcrumb>
-              <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                Bill is a cat.
-              </div>
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>
-              OLL Trainer 2019 | Powered by Ant Design | Created by Leslie
-              Alldridge
-            </Footer>
-          </Layout>
+        {pathname === '/learning' && (
+          <Learning />
         )}
       </Layout>
     );

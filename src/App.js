@@ -1,11 +1,10 @@
 import React from 'react';
 import SideBar from './common/sideBar'
-import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div>
-      <SideBar />
+      <SideBar props={{...props}}/>
     </div>
   );
 }

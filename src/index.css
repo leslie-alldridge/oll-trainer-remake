@@ -50,6 +50,14 @@ body {
   font-size: 500%;
   text-shadow: 0 0 300px #000;
 }
+.content p {
+  font-family: 'Century Gothic', sans-serif;
+  color: #1890ff;
+  font-size: 200%;
+  padding-left: 10%;
+  text-shadow: 0 0 300px #000;
+}
+
 .content .btn {
   border-radius: 9px;
   color: #f9f3f4;

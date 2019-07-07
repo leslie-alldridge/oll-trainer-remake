@@ -11,7 +11,7 @@ class Home extends React.Component {
                 <div className='content'>
                   <h1>Advanced OLL Trainer</h1>
                   <p>Learn all 57 OLL algorithms</p>
-                  <Link to="/learning"
+                  <Link to="/learning" onClick={this.props.navigate}
                     className='btn'
                   >
                     GET STARTED

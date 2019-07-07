@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Layout, Breadcrumb, PageHeader } from 'antd';
 import { Typography, Divider } from 'antd';
 const { Content, Footer } = Layout;
@@ -13,14 +14,15 @@ const Learning = () => {
                 <Breadcrumb.Item>Learning</Breadcrumb.Item>
               </Breadcrumb>
               <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+              <Divider />
               <Typography>
-                <Title>Introduction to OLL</Title>
+                <Title level={2}>Introduction to OLL</Title>
                 <Paragraph>
                 OLL stands for <Text strong>"Orient Last Layer"</Text> and is part of the advanced Fridrich method used to speed solve Rubik's cubes.
                 To master OLL, one must learn all 57 algorithms. Other basic methods such as two-look OLL only require nine algorithms. 
                 Here, we want to help prepare you to learn all 57 so you can reduce your solve times and quickly overcome any yellow shapes in your way.
                 </Paragraph>
-                <Title level={2}>How can we help you?</Title>
+                <Title level={3}>How can we help you?</Title>
                 <Paragraph>
                 My goal is to offer solvers some effective ways to memorize algorithms. Currently you can do drills and reduce times on a particular algorithm, or 
                 learn new algorithms. Algorithms you have mastered, will be ticked green but you can still go back and perfect them further.
@@ -29,10 +31,10 @@ const Learning = () => {
                 <Paragraph>
                 <ul>
                     <li>
-                    <a href="/docs/spec/proximity">I want to learn new algs</a>
+                    <Link to="/timer">Improve times</Link>
                     </li>
                     <li>
-                    <a href="/docs/pattern/navigation">Improve times</a>
+                    <Link to="/algs">I want to learn new algs</Link>
                     </li>
                     <li>
                     <a href="https://github.com/leslie-alldridge/oll-trainer-remake/issues">Provide feedback</a>
@@ -52,10 +54,10 @@ const Learning = () => {
                     <a href="https://www.cubeskills.com/uploads/pdf/tutorials/oll-algorithms.pdf">PDF Document for all OLL algs</a>
                     </li>
                     <li>
-                    <a href="https://www.youtube.com/watch?v=GhmYBgLoQQg">Two-look OLL method (beginner)</a>
+                    <a href="https://www.youtube.com/watch?v=GhmYBgLoQQg">Two-look OLL video (beginner)</a>
                     </li>
                     <li>
-                    <a href="https://www.youtube.com/watch?v=IasVqtCHoj0">OLL Video and Fingertricks</a>
+                    <a href="https://www.youtube.com/watch?v=IasVqtCHoj0">OLL Cubeskills video and Fingertricks</a>
                     </li>
                 </ul>
                 </Paragraph>

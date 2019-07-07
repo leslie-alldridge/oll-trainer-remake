@@ -9,6 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Home styles */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -76,4 +78,22 @@ p {
   text-align: justify;
   margin: 3%;
   font-family: sans-serif;
+}
+
+
+/* clock styles */
+.clock-bg {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+}
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #1890ff;
+  font-size: 10em;
+  font-family: 'Oxygen Mono', monospace;
+  letter-spacing: 7px;
 }

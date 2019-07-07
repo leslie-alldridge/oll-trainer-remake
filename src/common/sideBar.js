@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import Home from './home';
 import Learning from './learning';
+import Stopwatch from '../timer/stopwatch';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -73,6 +74,9 @@ class SideBar extends Component {
         )}
         {pathname === '/learning' && (
           <Learning />
+        )}
+        {pathname ==='/timer' && (
+          <Stopwatch />
         )}
       </Layout>
     );

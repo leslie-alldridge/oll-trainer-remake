@@ -89,7 +89,7 @@ p {
 }
 .clock {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 55%;
   transform: translateX(-50%) translateY(-50%);
   color: #1890ff;
@@ -102,7 +102,7 @@ p {
   font-family: 'Oxygen Mono', monospace;
   position: absolute;
   font-size: 3em;
-  top: 70%;
+  top: 75%;
   left: 45%;
 }
 
@@ -114,4 +114,13 @@ p {
   text-decoration: none;
   color: #1890ff;
   margin: 2px;
+}
+
+.stopwatch--note {
+  color: #1890ff;
+  font-size: 1em;
+}
+
+.stopwatch--note-icon {
+  margin-right: 0.3%;
 }

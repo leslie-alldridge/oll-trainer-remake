@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TimeElapsed from './timeElapsed'
+import { Icon } from 'antd'
 
 class Stopwatch extends Component {
     constructor(props) {
@@ -42,9 +43,13 @@ class Stopwatch extends Component {
     handleKeyPress = (event) => {
       console.log(event)
       if (event.code === 'Space'){
-      this.setState({isRunning: !this.state.isRunning}, () => {
-        this.state.isRunning ? this.startTimer() : clearInterval(this.timer)
-      });
+        this.setState({isRunning: !this.state.isRunning}, () => {
+          this.state.isRunning ? this.startTimer() : clearInterval(this.timer)
+        });
+      }
+      if (event.code === 'Escape'){
+        clearInterval(this.timer);
+        this.setState(this.initialState);
       }
     }
     render() {
@@ -65,8 +70,11 @@ class Stopwatch extends Component {
             Reset
           </button>
           }
-        </div>
-        </div>
+          </div>
+          <p className="stopwatch--note"><Icon className="stopwatch--note-icon" type="info-circle" />
+            <i>Spacebar to start/stop and Escape to clear</i>
+          </p>
+          </div>
         </div>
       );
     }

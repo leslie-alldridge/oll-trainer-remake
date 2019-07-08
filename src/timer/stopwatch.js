@@ -79,6 +79,30 @@ class Stopwatch extends Component {
             <Icon className='stopwatch--note-icon' type='info-circle' />
             <i>Spacebar to start/stop and Escape to clear</i>
           </p>
+          <div className='stopwatch--columns'>
+            <div className='stopwatch--image'>
+              <p>Currently solving: </p>
+              <img src='http://www.rubiksplace.com/speedcubing/OLL-algorithms/images/OLL-26.PNG' />
+            </div>
+            <div className='stopwatch--image'>
+              <p>Algorithms: </p>
+              <ul>
+                <li>
+                  <strong>R' U' R U' R' U2 R</strong>
+                </li>
+                <li>(y) R U2 R' U' R U' R'</li>
+              </ul>
+            </div>
+            <div className='stopwatch--image'>
+              <p>Previous Times: </p>
+              <ul>
+                <li>
+                  <strong className='stopwatch--best'>Best: 03:012</strong>
+                </li>
+                <li>1.200</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     );

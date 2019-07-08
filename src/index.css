@@ -123,3 +123,35 @@ p {
 .stopwatch--note-icon {
   margin-right: 0.3%;
 }
+
+.stopwatch--image img {
+  width: 40%;
+  height: 60%;
+  border: 2px solid #1890ff;
+  margin-left: 5%;
+  left: 17%;
+}
+
+.stopwatch--image p {
+  color: #1890ff;
+}
+
+.stopwatch--image li {
+  color: #1890ff;
+  font-size: 2em;
+  list-style-type: none;
+}
+
+.stopwatch--image {
+  float: left;
+  width: 33.33%;
+}
+
+.stopwatch--best {
+  color: #4caf50;
+}
+
+.stopwatch--columns {
+  display: flex;
+  flex-direction: row;
+}

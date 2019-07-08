@@ -10,6 +10,15 @@ class Stopwatch extends Component {
         timeElapsed: 0,
       };
     }
+    componentDidMount(){
+      document.addEventListener("keydown", this.handleKeyPress);
+  }
+  
+  
+  componentWillUnmount() {
+      document.removeEventListener("keydown", this.handleKeyPress);
+  }
+
     toggle = () => {
       this.setState({isRunning: !this.state.isRunning}, () => {
         this.state.isRunning ? this.startTimer() : clearInterval(this.timer)
@@ -29,21 +38,34 @@ class Stopwatch extends Component {
       this.setState({timeElapsed: this.state.timeElapsed + delta});
       this.startTime = Date.now();
     }
+
+    handleKeyPress = (event) => {
+      console.log(event)
+      if (event.code === 'Space'){
+      this.setState({isRunning: !this.state.isRunning}, () => {
+        this.state.isRunning ? this.startTimer() : clearInterval(this.timer)
+      });
+      }
+    }
     render() {
       const {isRunning, timeElapsed} = this.state;
       return (
         <div className="clock-bg">
         <div>
           <TimeElapsed id="timer" timeElapsed={timeElapsed} />
-          <button onClick={this.toggle}>
+          <div className="stopwatch--button-div">
+          <button className="stopwatch--button" onClick={this.toggle} onKeyPress={(e) => this.handleKeyPress(e)}>
             {isRunning ? 'Stop' : 'Start'}
           </button>
-          {!isRunning  && <button
+          {!isRunning  && <button 
+            className="stopwatch--button"
             onClick={isRunning ? this.lap : this.reset}
             disabled={!isRunning && !timeElapsed}
            >
             Reset
-          </button>}
+          </button>
+          }
+        </div>
         </div>
         </div>
       );

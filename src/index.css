@@ -90,10 +90,28 @@ p {
 .clock {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 55%;
   transform: translateX(-50%) translateY(-50%);
   color: #1890ff;
   font-size: 10em;
   font-family: 'Oxygen Mono', monospace;
   letter-spacing: 7px;
+}
+
+.stopwatch--button-div {
+  font-family: 'Oxygen Mono', monospace;
+  position: absolute;
+  font-size: 3em;
+  top: 70%;
+  left: 45%;
+}
+
+.stopwatch--button{
+  border-radius: 9px;
+  border: 3px solid;
+  padding: 7px 13px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1890ff;
+  margin: 2px;
 }

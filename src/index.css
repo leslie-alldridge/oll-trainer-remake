@@ -80,7 +80,6 @@ p {
   font-family: sans-serif;
 }
 
-
 /* clock styles */
 .clock-bg {
   background-color: #000;
@@ -106,7 +105,7 @@ p {
   left: 45%;
 }
 
-.stopwatch--button{
+.stopwatch--button {
   border-radius: 9px;
   border: 3px solid;
   padding: 7px 13px;

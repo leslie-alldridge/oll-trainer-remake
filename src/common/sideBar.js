@@ -27,8 +27,8 @@ class SideBar extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { pathname } = this.props.props.location;
+    const { params } = this.props.props.match;
     const { push } = this.props.props.history;
     return (
       <Layout style={{ minHeight: '100vh' }}>
@@ -124,7 +124,7 @@ class SideBar extends Component {
         </Sider>
         {pathname === '/' && <Home navigate={() => this.navigate('1')} />}
         {pathname === '/learning' && <Learning />}
-        {pathname === '/timer' && <Stopwatch />}
+        {pathname.includes('/timer') && <Stopwatch oll={params.oll} />}
       </Layout>
     );
   }

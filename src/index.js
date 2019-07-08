@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 const getRoutes = () => {
   return (
     <Switch>
+      <Route path='/timer/:oll' component={App} />
       <Route path='/' component={App} />
     </Switch>
   );

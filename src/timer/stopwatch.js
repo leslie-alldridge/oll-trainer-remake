@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TimeElapsed from './timeElapsed';
 import { Icon } from 'antd';
-import { oll1 } from '../images/images';
+import { images } from '../images/images';
 import { algs } from '../common/algs'
 
 class Stopwatch extends Component {
@@ -54,8 +54,6 @@ class Stopwatch extends Component {
     }
   };
   render() {
-    console.log(oll1);
-    console.log(this.props.oll);
     const { isRunning, timeElapsed } = this.state;
     return (
       <div className='clock-bg'>
@@ -86,7 +84,7 @@ class Stopwatch extends Component {
           <div className='stopwatch--columns'>
             <div className='stopwatch--image'>
               <p>Currently solving: </p>
-              <img alt='oll-algorithm' src={oll1} />
+              <img alt='oll-algorithm' src={images.images[this.props.oll].image} />
             </div>
             <div className='stopwatch--image'>
               <p>Algorithms: </p>

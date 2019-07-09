@@ -3,7 +3,7 @@ import { Layout, Menu, Icon } from 'antd';
 import Home from './home';
 import Learning from './learning';
 import Stopwatch from '../timer/stopwatch';
-
+import Timer from'./timer'
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -124,7 +124,8 @@ class SideBar extends Component {
         </Sider>
         {pathname === '/' && <Home navigate={() => this.navigate('1')} />}
         {pathname === '/learning' && <Learning />}
-        {pathname.includes('/timer') && <Stopwatch oll={params.oll} />}
+        {pathname === '/timer' && <Timer />}
+        {pathname.includes('/timer/') && <Stopwatch oll={params.oll} />}
       </Layout>
     );
   }

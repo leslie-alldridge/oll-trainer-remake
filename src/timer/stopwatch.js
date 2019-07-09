@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TimeElapsed from './timeElapsed';
 import { Icon } from 'antd';
 import { oll1 } from '../images/images';
+import { algs } from '../common/algs'
 
 class Stopwatch extends Component {
   constructor(props) {
@@ -89,11 +90,8 @@ class Stopwatch extends Component {
             </div>
             <div className='stopwatch--image'>
               <p>Algorithms: </p>
-              <ul>
-                <li>
-                  <strong>R' U' R U' R' U2 R</strong>
-                </li>
-                <li>(y) R U2 R' U' R U' R'</li>
+              <ul className='stopwatch--ul'>
+                {algs[this.props.oll].map(alg => <li>{alg.alg}</li>)}
               </ul>
             </div>
             <div className='stopwatch--image'>

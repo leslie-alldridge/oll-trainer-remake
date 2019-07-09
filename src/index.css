@@ -119,6 +119,10 @@ p {
   cursor: pointer;
 }
 
+.stopwatch--ul>li:first-child{
+  font-weight: bold;
+}
+
 .stopwatch--note {
   color: #1890ff;
   font-size: 1em;
